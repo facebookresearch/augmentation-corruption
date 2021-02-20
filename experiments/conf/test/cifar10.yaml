@@ -1,0 +1,8 @@
+test:
+  batch_size: 200
+  class: overlap.datasets.Cifar10Base
+  params:
+    data_path: ${cifar10_data_path}
+    split: 'test'
+    im_size: 32
+    train_aug:

@@ -1,0 +1,12 @@
+train:
+  batch_size: 32 # Per GPU batch size
+  checkpoint_period: 5
+  weights:
+  class: overlap.datasets.ImageNetBase
+  params:
+    data_path: ${imagenet_data_path}
+    split: 'train'
+    im_size: 224
+    train_aug:
+    rgb_to_bgr: ${model.rgb_to_bgr}
+    

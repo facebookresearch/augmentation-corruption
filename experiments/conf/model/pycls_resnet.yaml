@@ -1,0 +1,15 @@
+model:
+  rgb_to_bgr: True
+  class: overlap.models.ResNetPycls
+  params:
+    depth: 50
+    width_factor: 1
+    num_groups: 1
+    width_per_group: 64
+    stride_1x1: False
+    relu_inplace: True
+    bn_params:
+      eps: 0.00001
+      momentum: 0.1
+      affine: True
+    num_classes: 1000

@@ -1,0 +1,12 @@
+corrupt:
+  batch_size: 200
+  aug_string:
+  class: overlap.datasets.Cifar10Corruption
+  mCE_baseline_file: 'mCE_baseline.p'
+  params:
+    data_path: ${cifar10_data_path}
+    split: 'test'
+    im_size: 32
+    train_aug:
+    aug_string: ??? #aug_string is set internally, use corrupt.aug_string
+    frost_path: ${frost_path}

@@ -1,0 +1,9 @@
+test:
+  batch_size: 40
+  class: overlap.datasets.ImageNetBase
+  params:
+    data_path: ${imagenet_data_path}
+    split: 'val'
+    im_size: 224
+    train_aug:
+    rgb_to_bgr: ${model.rgb_to_bgr}

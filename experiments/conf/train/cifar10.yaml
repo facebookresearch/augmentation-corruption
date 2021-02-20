@@ -1,0 +1,11 @@
+train:
+  batch_size: 128
+  checkpoint_period: 100
+  weights:
+  class: overlap.datasets.Cifar10Base
+  params:
+    data_path: ${cifar10_data_path}
+    split: 'train'
+    im_size: 32
+    train_aug:
+    

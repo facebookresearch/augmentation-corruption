@@ -1,0 +1,14 @@
+train:
+  batch_size: 32
+  checkpoint_period: 5
+  weights:
+  finetune: True
+  class: overlap.datasets.ImageNetSIN
+  params:
+    in_data_path: ${imagenet_data_path}
+    sin_data_path: ${sin_data_path}
+    split: 'train'
+    im_size: 224
+    train_aug:
+    rgb_to_bgr: ${model.rgb_to_bgr}
+    

@@ -1,0 +1,10 @@
+rng_seed: 1
+data_loader:
+  num_workers: 10
+  pin_memory: True
+weights: 
+defaults:
+  - paths
+  - model: wideresnet
+  - test: cifar10
+  - corrupt: cifar10c_in_memory

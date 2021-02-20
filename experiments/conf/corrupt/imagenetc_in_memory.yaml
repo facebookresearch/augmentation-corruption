@@ -1,0 +1,13 @@
+corrupt:
+  batch_size: 40
+  aug_string:
+  class: overlap.datasets.ImageNetCorruption
+  mCE_baseline_file: 'mCE_baseline_imagenet.p'
+  params:
+    data_path: ${imagenet_data_path}
+    split: 'val'
+    im_size: 224
+    train_aug:
+    aug_string: ??? #aug_string is set internally, use corrupt.aug_string
+    frost_path: ${frost_path}
+    rgb_to_bgr: ${model.rgb_to_bgr}

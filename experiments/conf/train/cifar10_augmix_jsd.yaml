@@ -1,0 +1,17 @@
+train:
+  batch_size: 128
+  checkpoint_period: 100
+  weights:
+  jsd_alpha: 12.0
+  class: overlap.datasets.Cifar10AugmixJSD
+  params:
+    data_path: ${cifar10_data_path}
+    split: 'train'
+    im_size: 32
+    train_aug: True
+    augmix_width: 3
+    augmix_depth: 3
+    augmix_random_depth: True
+    augmix_prob_coeff: 1.0
+    augmix_severity: 3
+    jsd_num: 3

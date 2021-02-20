@@ -1,0 +1,12 @@
+rng_seed: 1
+num_gpus: 8 # hydra/launcher settings control actual number of gpus launched. This is used for calculational purposes
+data_loader:
+  num_workers: 10 # per gpu
+  pin_memory: True
+defaults:
+  - paths
+  - model: pycls_resnet
+  - train: imagenet
+  - test: imagenet
+  - corrupt: imagenetc_in_memory
+  - optim: imagenet_8gpu

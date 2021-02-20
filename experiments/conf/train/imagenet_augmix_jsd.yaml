@@ -1,0 +1,15 @@
+train:
+  batch_size: 32 # per GPU
+  checkpoint_period: 5
+  weights:
+  jsd_alpha: 12.0
+  class: overlap.datasets.ImageNetAugmixJSD
+  params:
+    data_path: ${imagenet_data_path}
+    split: 'train'
+    im_size: 224
+    mixture_width: 3
+    mixture_depth: -1
+    aug_prob_coeff: 1.0
+    aug_severity: 1
+    jsd_num: 3

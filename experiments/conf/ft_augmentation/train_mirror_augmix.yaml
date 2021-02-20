@@ -1,0 +1,15 @@
+ft_augmentation:
+  batch_size: 200
+  class: overlap.datasets.Cifar10Augmix
+  params:
+    data_path: ${cifar10_data_path}
+    split: ${train.params.split}
+    im_size: ${train.params.im_size}
+    train_aug: False
+    width: ${train.params.width}
+    depth: ${train.params.depth}
+    random_depth: ${train.params.random_depth}
+    prob_coeff: ${train.params.prob_coeff}
+    severity: ${train.params.severity}
+    aug_string: ${train.params.aug_string}
+    num_transforms: 100000

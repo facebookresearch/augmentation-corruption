@@ -1,0 +1,15 @@
+train:
+  batch_size: 32
+  checkpoint_period: 5
+  weights:
+  class: overlap.datasets.ImageNetPatchGaussian
+  params:
+    data_path: ${imagenet_data_path}
+    split: 'train'
+    im_size: 224
+    train_aug:
+    patch_width: 250
+    max_width: False
+    patch_sigma: 1.0
+    rgb_to_bgr: ${model.rgb_to_bgr}
+    

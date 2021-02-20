@@ -1,0 +1,14 @@
+ft_corrupt:
+  batch_size: 200
+  aug_string: 'gaussian_noise-1--gaussian_noise-2--gaussian_noise-3--gaussian_noise-4--gaussian_noise-5--shot_noise-1--shot_noise-2--shot_noise-3--shot_noise-4--shot_noise-5--impulse_noise-1--impulse_noise-2--impulse_noise-3--impulse_noise-4--impulse_noise-5--motion_blur-1--motion_blur-2--motion_blur-3--motion_blur-4--motion_blur-5--defocus_blur-1--defocus_blur-2--defocus_blur-3--defocus_blur-4--defocus_blur-5--zoom_blur-1--zoom_blur-2--zoom_blur-3--zoom_blur-4--zoom_blur-5--glass_blur-1--glass_blur-2--glass_blur-3--glass_blur-4--glass_blur-5--brightness-1--brightness-2--brightness-3--brightness-4--brightness-5--fog-1--fog-2--fog-3--fog-4--fog-5--frost-1--frost-2--frost-3--frost-4--frost-5--snow-1--snow-2--snow-3--snow-4--snow-5--contrast-1--contrast-2--contrast-3--contrast-4--contrast-5--pixelate-1--pixelate-2--pixelate-3--pixelate-4--pixelate-5--jpeg_compression-1--jpeg_compression-2--jpeg_compression-3--jpeg_compression-4--jpeg_compression-5--elastic_transform-1--elastic_transform-2--elastic_transform-3--elastic_transform-4--elastic_transform-5'
+  indices_file:
+  num_indices: 100
+  class: overlap.datasets.Cifar10Corruption
+  params:
+    data_path: ${cifar10_data_path}
+    split: 'train'
+    im_size: 32
+    train_aug: False
+    aug_string: ??? #aug_string is set internally, use corrupt.aug_string
+    frost_path: ${frost_path}
+    num_transforms: 100

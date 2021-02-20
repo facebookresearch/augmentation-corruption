@@ -1,0 +1,15 @@
+optim:
+  base_lr: 0.1
+  max_epoch: 100
+  class: torch.optim.SGD
+  params:
+    lr: ${optim.base_lr}
+    momentum: 0.9
+    weight_decay: 0.0005
+    dampening: 0.0
+    nesterov: true
+  lr_policy:
+    class: overlap.utils.lr_policy.Cosine
+    params:
+      base_lr: ${optim.base_lr}
+      max_epoch: ${optim.max_epoch}

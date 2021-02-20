@@ -1,0 +1,15 @@
+train:
+  batch_size: 128
+  checkpoint_period: 100
+  weights:
+  class: overlap.datasets.Cifar10PatchGaussian
+  params:
+    data_path: ${cifar10_data_path}
+    split: 'train'
+    im_size: 32
+    transform_file:
+    patch_width: 25
+    patch_sigma: 1.0
+    max_width: True
+    train_aug:
+    num_transforms:

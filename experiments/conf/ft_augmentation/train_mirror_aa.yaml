@@ -1,0 +1,11 @@
+ft_augmentation:
+  batch_size: 200
+  class: overlap.datasets.Cifar10AutoAugment
+  params:
+    data_path: ${cifar10_data_path}
+    split: ${train.params.split}
+    im_size: ${train.params.im_size}
+    train_aug: False
+    subpolicy_list: ${train.params.subpolicy_list}
+    add_cutout: ${train.params.add_cutout}
+    num_transforms: 100000

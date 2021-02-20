@@ -1,0 +1,36 @@
+ft:
+  class: overlap.feature_extractor.Network
+  params:
+    dataset_cfg:  
+      batch_size: 128
+      checkpoint_period: 100
+      weights:
+      class: overlap.datasets.Cifar10Base
+      params:
+        data_path: ${cifar10_data_path}
+        split: 'train'
+        im_size: 32
+        train_aug:
+    optim_cfg:
+      base_lr: 0.1
+      max_epoch: 100
+      class: torch.optim.SGD
+      params:
+        lr: ${ft.params.optim_cfg.base_lr}
+        momentum: 0.9
+        weight_decay: 0.0005
+        dampening: 0.0
+        nesterov: true
+      lr_policy:
+        class: overlap.utils.lr_policy.Cosine
+        params:
+          base_lr: ${ft.params.optim_cfg.base_lr}
+          max_epoch: ${ft.params.optim_cfg.max_epoch}
+    model_cfg:
+      class: overlap.wideresnet.WideResNet
+      params:
+        depth: 40
+        num_classes: 10
+        widen_factor: 2
+        drop_rate: 0.0
+    data_loader: ${data_loader}

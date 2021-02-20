@@ -1,0 +1,12 @@
+train:
+  batch_size: 32
+  checkpoint_period: 5
+  weights:
+  class: overlap.datasets.ImageNetAutoAugment
+  params:
+    data_path: ${imagenet_data_path}
+    split: 'train'
+    im_size: 224
+    train_aug:
+    subpolicy_list:
+    rgb_to_bgr: True

@@ -1,0 +1,12 @@
+ft_augmentation:
+  batch_size: 200
+  class: overlap.datasets.Cifar10PatchGaussian
+  params:
+    data_path: ${cifar10_data_path}
+    split: ${train.params.split}
+    im_size: ${train.params.im_size}
+    train_aug: False
+    patch_width: ${train.params.patch_width}
+    patch_sigma: ${train.params.patch_sigma}
+    max_width: ${train.params.max_width}
+    num_transforms: 100000

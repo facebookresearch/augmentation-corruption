@@ -1,0 +1,18 @@
+train:
+  batch_size: 128
+  checkpoint_period: 100
+  weights:
+  class: overlap.datasets.Cifar10Augmix
+  params:
+    data_path: ${cifar10_data_path}
+    split: 'train'
+    im_size: 32
+    train_aug:
+    width: 3
+    depth: 3
+    random_depth: True
+    prob_coeff: 1.0
+    severity: 3
+    aug_string:
+    num_transforms:
+    transform_file:

@@ -1,0 +1,11 @@
+ft_augmentation:
+  batch_size: 200
+  class: overlap.datasets.Cifar10RandomSample
+  params:
+    data_path: ${cifar10_data_path}
+    split: ${train.params.split}
+    im_size: ${train.params.im_size}
+    train_aug: False
+    aug_string: ${train.params.aug_string}
+    weights: ${train.params.weights}
+    num_transforms: 100000

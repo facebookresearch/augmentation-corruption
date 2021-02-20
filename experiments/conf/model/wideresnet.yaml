@@ -1,0 +1,7 @@
+model:
+  class: overlap.wideresnet.WideResNet
+  params:
+    depth: 40
+    num_classes: 10
+    widen_factor: 2
+    drop_rate: 0.0

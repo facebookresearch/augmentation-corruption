@@ -1,0 +1,46 @@
+ft:
+  class: overlap.feature_extractor.Network
+  params:
+    dataset_cfg:  
+      batch_size: 40
+      checkpoint_period: 5
+      weights:
+      class: overlap.datasets.ImageNetBase
+      params:
+        data_path: ${imagenet_data_path}
+        split: 'train'
+        im_size: 224
+        train_aug:
+        rgb_to_bgr: ${ft.params.model_cfg.rgb_to_bgr}
+    optim_cfg:
+      base_lr: 0.025
+      max_epoch: 100
+      class: torch.optim.SGD
+      params:
+        lr: ${ft.params.optim_cfg.base_lr}
+        momentum: 0.9
+        weight_decay: 0.0001
+        dampening: 0.0
+        nesterov: true
+      lr_policy:
+        class: overlap.utils.lr_policy.Steps
+        params:
+          base_lr: ${ft.params.optim_cfg.base_lr}
+          steps: [0, 30, 60, 90]
+          lr_mult: 0.1
+    model_cfg:
+      rgb_to_bgr: True
+      class: overlap.models.ResNetPycls
+      params:
+        depth: 50
+        width_factor: 1
+        num_groups: 1
+        width_per_group: 64
+        num_classes: 1000
+        bn_params:
+          eps: 0.00001
+          momentum: 0.1
+          affine: True
+        stride_1x1: True
+        relu_inplace: True
+    data_loader: ${data_loader}
