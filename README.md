@@ -4,6 +4,44 @@ This repository provides the code for the paper *On Interaction Between Augmenta
 
 The repository is divided into three parts.  First, the Jupyter notebook `minimal_sample_distance.ipynb` illustrates how to calculate the measure of distance between augmentations and corruptions proposed in the paper.  Second, `imagenet_c_bar/` provides code to generate or test on the datasets CIFAR-10-C-bar and ImageNet-C-bar, which are algorithmically chosen to be dissimilar from CIFAR-10/ImageNet-C and are used to study generalization.  Finally, `experiments/` provides code to reproduce the experiments in the paper.  Usage of these latter two is described in their respective READMEs.
 
+---
+
+### New: preprocessed ImageNet-C-bar dataset
+With the help from collegues at Berkeley, you can download a preprocessed copy of the IN dataset from [here](https://dl.fbaipublicfiles.com/inc_bar/imagenet_c_bar.tar.gz). 
+
+The dataset follows the ImageNet-C folder structure, so you can easily benchmark robustness results on our dataset with minimal modifications to your ImageNet-C dataloader. We have 10 different corruption types 
+
+\["blue_noise_sample", "brownish_noise", "caustic_refraction", 
+"checkerboard_cutout", "cocentric_sine_waves", "inverse_sparkles", 
+"perlin_noise", "plasma_noise", "single_frequency_greyscale", "sparkles"\] 
+
+and similar to ImageNet-C, 5 different severities, structured as follows:
+
+
+```
+/path/to/imagenet-c-bar/
+    blue_noise_sample/
+      1/
+        n01440764/
+            ILSVRC2012_val_00000293.JPEG
+            ...
+      2/
+      3/
+      4/
+      5/
+    brownish_noise/
+    caustic_refraction/
+    checkerboard_cutout/
+    cocentric_sine_waves/
+    inverse_sparkles/
+    perlin_noise/
+    plasma_noise/
+    single_frequency_greyscale/
+    sparkles
+```
+
+---
+
 This paper:
 
 1. Defines the *minimal sample distance*, which provides a measure of similarity on a perceptual feature space f(t) between augmentations and corruptions, extracted using a pre-trained neural network. This measure is assymetric to account for the fact that augmentation distributions are typically broader than any one corruption distribution but can still lead to good error if they produce augmentations that are perceptually similar to the corruption: 
