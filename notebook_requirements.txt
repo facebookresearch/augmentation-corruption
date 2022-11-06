@@ -1,6 +1,6 @@
 scipy==1.5.2
 wand==0.5.8
 scikit-image==0.16.2
-opencv-python==4.1.2.30
+opencv-python==4.2.0.32 # Run on 4.1.2.30 originally, upgraded for security reasons
 pillow>=8.2.0 # Run on v6.2.2 originally, upgraded for security reasons
 numpy==1.22 # Run on 1.19.2 originally, upgraded for security reasons
